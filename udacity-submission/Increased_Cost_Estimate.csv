@@ -1,0 +1,35 @@
+Estimate summary,,https://calculator.aws/#/estimate?id=62d64362072e81656fc7fc11df01dd56f0b79f25,,,,,,,,,,,
+Upfront cost,Monthly cost,Total 12 months cost,Currency,,,,,,,,,,
+0,19087.37,229048.44,USD,,,,,,,,,,
+,,* Includes upfront cost,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+Detailed Estimate,,,,,,,,,,,,,
+Group hierarchy,Region,Description,Service,Upfront,Monthly,First 12 months total,Currency,Configuration summary,,,,,
+My Estimate,US East (N. Virginia),,Amazon EC2 ,0,4080.2,48962.4,USD,"Tenancy (Shared Instances), Operating system (Linux), Workload (Consistent, Number of instances: 8), Advance EC2 instance (c5.4xlarge), Pricing strategy (On-Demand Utilization: 100 %Utilized/Month), Enable monitoring (disabled), EBS Storage amount (80 GB), DT Inbound: Internet (1 TB per month), DT Outbound: Internet (500 GB per month), DT Intra-Region: (0 GB per month)",,,,,
+My Estimate,US East (N. Virginia),,Application Load Balancer,0,2368.85,28426.2,USD,Number of Application Load Balancers (2),,,,,
+My Estimate,US East (N. Virginia),,Amazon CloudFront,0,60.5,726,USD,"Data transfer out to internet (100 GB per month), Data transfer out to origin (100 GB per month), Number of requests (HTTPS) (50000000 per month)",,,,,
+My Estimate,US East (N. Virginia),,Network Address Translation (NAT) Gateway,0,482.85,5794.2,USD,Number of NAT Gateways (1),,,,,
+My Estimate,US East (N. Virginia),,Amazon RDS for MySQL,0,2362.32,28347.84,USD,"Storage for each RDS instance (General Purpose SSD (gp2)), Storage amount (1 TB), Quantity (1), Instance type (db.m2.4xlarge), Utilization (On-Demand only) (100 %Utilized/Month), Deployment option (Multi-AZ), Pricing strategy (OnDemand), Additional backup storage (1000 GB), Total Size of Backup Processed for Export (GB) (500 per month), Cost for one month of retention (per vCPU per month) (1.5000000000), Cost for total retention (per vCPU per month) (1.50)",,,,,
+My Estimate,US East (N. Virginia),,S3 Standard,0,13.12,157.44,USD,S3 Standard storage (500 GB per month),,,,,
+My Estimate,US East (N. Virginia),,Data Transfer,0,0,0,USD,"DT Inbound: Internet (500 GB per month), DT Outbound: Amazon CloudFront (500 TB per month)",,,,,
+My Estimate,US East (N. Virginia),,Amazon Route 53,0,153.5,1842,USD,"Hosted Zones (1), Number of domains stored (2), Basic Checks Within AWS (20)",,,,,
+My Estimate,US East (N. Virginia),,Amazon Cognito,0,2874.25,34491,USD,"Number of monthly active users (MAU) (50000), Advanced security features (Enabled)",,,,,
+My Estimate,US East (N. Virginia),,Amazon API Gateway,0,1678.5,20142,USD,"HTTP API requests units (millions), Average size of each request (100 KB), REST API request units (thousands), Cache memory size (GB) (0.5), WebSocket message units (thousands), Average message size (32 KB), Requests (0 per day), Requests (700 per hour)",,,,,
+My Estimate,US East (N. Virginia),,AWS Lambda,0,3300.78,39609.36,USD,"Architecture (x86), Architecture (x86), Invoke Mode (Buffered), Number of requests (30 per second), Amount of ephemeral storage allocated (512 MB)",,,,,
+My Estimate,US East (N. Virginia),,DynamoDB on-demand capacity,0,1712.5,20550,USD,"Table class (Standard), Average item size (all attributes) (400 KB), Data storage size (500 GB)",,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+Acknowledgement,,,,,,,,,,,,,
+"* AWS Pricing Calculator provides only an estimate of your AWS fees and doesn't include any taxes that might apply. Your actual fees depend on a variety of factors, including your actual usage of AWS services.",,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,"I made a few change of:"
+," - Increase lambda call request"
+," - Change EC2 Instance type"
+," - Increase NAT Transfer data limit"
+," - Increase RDS instance type"
+," - Increase number of the API Gateway access per hours"
+," - Increase RAM of Lambda function => more RAM, more CPU"
+," - Increase DynamoDB write capacity"
+," => We increase all component to serve higher accessible need, especial the EC2 Instance, Lambda, RDS, DynamoDB which are the main component of the system, beside we have to level up the network and transfering data to meet with other service, Increase CloudFront and S3 will help better user UI experience."

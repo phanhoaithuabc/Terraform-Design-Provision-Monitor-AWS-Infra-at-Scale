@@ -1,0 +1,36 @@
+Estimate summary,,,,,,,,,,
+Upfront cost,Monthly cost,Total 12 months cost,Currency,,,,,,,
+0,6437.928,77255.14,USD,,,,,,,
+,,* Includes upfront cost,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+Detailed Estimate,,,,,,,,,,
+Group hierarchy,Region,Description,Service,Upfront,Monthly,First 12 months total,Currency,Configuration summary,,
+My Estimate,US East (N. Virginia),,Amazon EC2 ,0,510.388,6124.66,USD,"Tenancy (Shared Instances), Operating system (Linux), Workload (Consistent, Number of instances: 4), Advance EC2 instance (t3.xlarge), Pricing strategy (On-Demand Utilization: 100 %Utilized/Month), Enable monitoring (disabled), EBS Storage amount (50 GB), DT Inbound: Internet (1 TB per month), DT Outbound: Internet (50 GB per month), DT Intra-Region: (0 GB per month)",,
+My Estimate,US East (N. Virginia),,Application Load Balancer,0,149.65,1795.8,USD,Number of Application Load Balancers (2),,
+My Estimate,US East (N. Virginia),,Amazon CloudFront,0,5.11,61.32,USD,"Data transfer out to internet (1 GB per month), Data transfer out to origin (1 GB per month), Number of requests (HTTPS) (5000000 per month)",,
+My Estimate,US East (N. Virginia),,Network Address Translation (NAT) Gateway,0,37.35,448.2,USD,Number of NAT Gateways (1),,
+My Estimate,US East (N. Virginia),,Amazon RDS for MySQL,0,848.2,10178.4,USD,"Storage for each RDS instance (General Purpose SSD (gp2)), Storage amount (500 GB), Quantity (1), Instance type (db.m1.xlarge), Utilization (On-Demand only) (100 %Utilized/Month), Deployment option (Multi-AZ), Pricing strategy (OnDemand), Additional backup storage (100 GB), Total Size of Backup Processed for Export (GB) (100 per month)",,
+My Estimate,US East (N. Virginia),,S3 Standard,0,13.12,157.44,USD,S3 Standard storage (500 GB per month),,
+My Estimate,US East (N. Virginia),,Data Transfer,0,0,0,USD,"DT Inbound: Internet (500 GB per month), DT Outbound: Amazon CloudFront (500 TB per month)",,
+My Estimate,US East (N. Virginia),,Amazon Route 53,0,103.5,1242,USD,"Hosted Zones (1), Number of domains stored (2), Number of Elastic Network Interfaces (), Basic Checks Within AWS (10)",,
+My Estimate,US East (N. Virginia),,Amazon Cognito,0,2799.25,33591,USD,"Number of monthly active users (MAU) (50000), Advanced security features (Enabled)",,
+My Estimate,US East (N. Virginia),,Amazon API Gateway,0,781.1,9373.2,USD,"HTTP API requests units (millions), Average size of each request (100 KB), REST API request units (thousands), Cache memory size (GB) (0.5), WebSocket message units (thousands), Average message size (32 KB), Requests (0 per day), Requests (300 per hour)",,
+My Estimate,US East (N. Virginia),,AWS Lambda,0,552.76,6633.12,USD,"Architecture (x86), Architecture (x86), Invoke Mode (Buffered), Number of requests (10 per second), Amount of ephemeral storage allocated (512 MB)",,
+My Estimate,US East (N. Virginia),,DynamoDB on-demand capacity,0,637.5,7650,USD,"Table class (Standard), Average item size (all attributes) (400 KB), Data storage size (300 GB)",,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+Acknowledgement,,,,,,,,,,
+"* AWS Pricing Calculator provides only an estimate of your AWS fees and doesn't include any taxes that might apply. Your actual fees depend on a variety of factors, including your actual usage of AWS services.",,,,,,,,,,
+,,,,,,,,,,
+,"I made a few change of "
+," - lambda call request (make it from 20 down to 10 request per second), "
+," - EC2 storage (reduce it from 80GB to 50GB), "
+," - Reduce NAT Transfer data limit"
+," - Reduce the backup plan and number backup of storage of RDS but not instance type"
+," - Reduce the number of queries and number of healcheck, not impact much on access"
+," - Also reduce a few number of people sign in through SAML or OIDC federation from 50 to 40"
+," - Reduce number of the API Gateway access per hours"
+," - Reduce Lambda Number of Request per second to reduce cost"
+," => With lower cost we have to reduce the overall all the resource, data transfer, accessible, storage,... of all components in the system, but we can not reduce 1 or 2 component down to least, that can cause bottleneck."
