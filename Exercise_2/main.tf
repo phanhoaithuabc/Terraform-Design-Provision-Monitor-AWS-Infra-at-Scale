@@ -3,7 +3,7 @@ provider "aws" {
   # secret_key = "<Your Secret Key>"
   region = "us-east-1"
   # shared_config_files      = ["C:/Users/PHT/.aws/config"]
-  shared_credentials_files = ["C:/Users/PHT/.aws/credentials"]
+  shared_credentials_files = ["C:/Users/thuph5/.aws/credentials"]
   profile                  = "default"
 }
 
