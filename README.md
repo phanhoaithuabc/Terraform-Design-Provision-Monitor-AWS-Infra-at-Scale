@@ -26,9 +26,12 @@ Think about where to add redundancy and how to improve performance. Re-configure
 [Increased_Cost_Estimate.csv](udacity-submission/Increased_Cost_Estimate.csv)
 
 ## Exercise 1
-In the main.tf file write the code to provision `Terraform_1_1.png`. 
-5. Use Terraform to  delete the 2 m4.large instances 
-6. Take an updated screenshot of the AWS console showing only the 4 t2.micro instances and save it as `Terraform_1_2.png`
+In the main.tf file write the code to provision:
+ - AWS as the cloud provider
+ - Use an existing VPC ID
+ - Use an existing public subnet
+ - 4 AWS t2.micro EC2 instances named Udacity T2
+ - 2 m4.large EC2 instances named Udacity M4
 
 ### Exercise 2
 
@@ -38,12 +41,3 @@ In the main.tf file write the code to provision `Terraform_1_1.png`.
    * A main.tf file with AWS as the provider, and IAM role for Lambda, a VPC, and a public subnet
    * An outputs.tf file
    * A variables.tf file with an AWS region
-  
-2. Take a screenshot of the EC2 instances page Terraform_2_1.png
-3. Take a screenshot of the VPC page Terraform_2_2.png
-4. Take a screenshot of the CloudWatch log entry for the lambda function execution and save it as Terraform_2_3.png
-
-### Destroy the Infrastructure using Terraform and prepare for submission
-Destroy all running provisioned infrastructure using Terraform so as not to incur unwanted charges.
-
-Take a screenshot of the EC2 instances page and label it Terraform_destroyed.png
